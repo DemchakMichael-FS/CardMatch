@@ -65,7 +65,9 @@ class Card {
     render() {
         const backFace = this.element.querySelector('.card-back');
         if (backFace) {
-            backFace.textContent = this.value.toString();
+            // Use symbols instead of numbers for better visual representation
+            const symbols = ['♠', '♥', '♦', '♣', '★', '✿', '♛', '♞', '☼'];
+            backFace.textContent = symbols[this.value - 1] || this.value.toString();
         }
     }
 }
